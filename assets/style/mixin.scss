@@ -1,0 +1,46 @@
+@mixin title-style {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 17px;
+}
+
+@mixin description-style {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 17px;
+}
+
+@mixin price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .price-wrap {
+    &__title {
+      color: #bdbdbd;
+      font-size: 18px;
+    }
+
+    &__count {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 17px;
+    }
+  }
+}
+
+@mixin default-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #afdaff;
+  border-radius: 33px;
+  color: #072743;
+}
+
+@mixin media-table {
+
+}
+
+@mixin media-mobile {
+
+}

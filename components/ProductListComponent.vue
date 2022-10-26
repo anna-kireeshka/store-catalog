@@ -82,6 +82,7 @@ export default class ProductListComponent extends Vue {
 
 <style scoped lang="scss">
 .products {
+  @include small-desctop;
   width: 70%;
   margin: 0 auto;
   margin-top: 80px;
@@ -94,8 +95,12 @@ export default class ProductListComponent extends Vue {
     justify-content: space-between;
   }
   &__item {
-    flex: 0 0 25%;
-    margin: 40px;
+    @media screen and (min-width: 1024px) {
+      flex: 1 0 25%;
+      margin: 40px;
+    }
+
+    margin: 10px;
     overflow: hidden;
     background: #ffffff;
     border: 3px solid #d7e5f4;
@@ -108,6 +113,7 @@ export default class ProductListComponent extends Vue {
   }
   &__item-row {
     flex: 0 0 100%;
+    margin-bottom: 40px;
   }
 }
 .product {
@@ -119,8 +125,10 @@ export default class ProductListComponent extends Vue {
     height: 100%;
   }
   &__img {
+    @media screen and (min-width: 1280px) {
+      height: 500px;
+    }
     width: 60%;
-    height: 500px;
     object-fit: contain;
     margin: 0 auto;
   }
@@ -129,7 +137,9 @@ export default class ProductListComponent extends Vue {
   display: flex;
   width: 100%;
   &__img {
-    height: 400px;
+    @media screen and (min-width: 1280px) {
+      height: 400px;
+    }
   }
 }
 .info {
@@ -149,6 +159,7 @@ export default class ProductListComponent extends Vue {
   }
 }
 .info-row {
+  @include small-desctop;
   display: flex;
   flex-direction: column;
   width: 70%;

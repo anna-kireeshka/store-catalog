@@ -42,13 +42,16 @@ export default class ProductPageCategoryList extends Vue {
 
 <style scoped lang="scss">
 .category {
+  @include small-desctop;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
   width: 70%;
+  flex-wrap: wrap;
   &__item {
     @include default-btn;
     padding: 20px 45px;
+    margin: 10px;
     text-transform: uppercase;
     font-weight: 600;
     &:hover,

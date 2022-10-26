@@ -129,7 +129,7 @@ export default class ProductPagination extends Vue {
 }
 
 .active {
-  background-color: #4AAE9B;
+  background-color: #463dbe;
   color: #ffffff;
 }
 </style>

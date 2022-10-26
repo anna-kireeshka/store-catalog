@@ -25,7 +25,7 @@ export default class ProductSearchForm extends Vue {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .form-input {
   width: 100%;
   padding: 14px;

@@ -70,6 +70,14 @@ export default class ProductModalComponent extends Vue {
   background: rgba(0, 0, 0, 0.7);
 }
 .modal-container {
+  @media screen and (max-width: 1280px) {
+    height: auto;
+  }
+  @media screen and (max-width: 712px) {
+    min-width: 80%;
+    height: auto;
+  }
+
   display: flex;
   background: #fff;
   position: fixed;
@@ -79,12 +87,17 @@ export default class ProductModalComponent extends Vue {
   transform: translate(-50%, -50%);
   border-radius: 5px;
   width: 50%;
-  height: 600px;
+  height: 700px;
   overflow-y: auto;
   flex-direction: column;
   padding: 20px;
 
   &__btn {
+    @media screen and (max-width: 512px) {
+      padding: 3px;
+      top: 2%;
+      left: 2%;
+    }
     position: absolute;
     padding: 10px;
     top: 2%;
@@ -110,6 +123,10 @@ export default class ProductModalComponent extends Vue {
     margin-bottom: 30px;
   }
   &__desc {
+    @media screen and (max-width: 512px) {
+      height: 100px;
+      overflow-y: scroll;
+    }
     @include description-style;
     margin-bottom: 30px;
   }
@@ -124,7 +141,14 @@ export default class ProductModalComponent extends Vue {
 }
 .rating {
   display: flex;
+  @media screen and (max-width: 512px) {
+    display: block;
+  }
   &__count {
+    @media screen and (max-width: 512px) {
+      font-size: 15px;
+      margin-right: 0;
+    }
     @include description-style;
     margin-right: 30px;
     &--value {
@@ -134,6 +158,10 @@ export default class ProductModalComponent extends Vue {
   }
   &__rate {
     @include description-style;
+    @media screen and (max-width: 512px) {
+      font-size: 15px;
+      margin-right: 0;
+    }
     &--value {
       font-weight: 700;
       color: #357cff;

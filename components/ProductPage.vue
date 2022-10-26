@@ -1,5 +1,8 @@
 <template>
   <div class="wrapper">
+    <header class="header">
+        <img src="../assets/background.jpg" alt="Фон" class="header__img">
+    </header>
     <nav class="navigation">
       <div class="navigation__wrap">
         <ProductSearchForm
@@ -13,6 +16,8 @@
             title="Список"
             class="navigation__btn"
             @click="displayAslistOrGrid('list')"
+            v-if="isDisplayAsGrid"
+
           >
             <span class="material-symbols-outlined"> reorder </span>
           </button>
@@ -20,6 +25,7 @@
             title="Сетка"
             class="navigation__btn"
             @click="displayAslistOrGrid('grid')"
+            v-if="isDisplayAsList"
           >
             <span class="material-symbols-outlined"> grid_on </span>
           </button>
@@ -27,9 +33,11 @@
       </div>
     </nav>
 
-    <ProductPageCategoryList
-      :categories-list="categoriesList"
-    ></ProductPageCategoryList>
+    <div class="category-wrapper">
+      <ProductPageCategoryList
+        :categories-list="categoriesList"
+      ></ProductPageCategoryList>
+    </div>
 
     <div class="products">
       <ProductListComponent
@@ -76,7 +84,7 @@ export default class ProductPage extends Vue {
 
   isDisplayAsList: boolean = false
 
-  isDisplayAsGrid: boolean = false
+  isDisplayAsGrid: boolean = true
 
   categoryName: string = ''
 
@@ -135,6 +143,7 @@ export default class ProductPage extends Vue {
 .navigation {
   width: 100%;
   &__wrap {
+    @include small-desctop;
     width: 70%;
     display: flex;
     justify-content: space-between;
@@ -142,7 +151,7 @@ export default class ProductPage extends Vue {
     margin: 40px auto;
 
     padding: 20px 30px;
-    background: #b0d9ff;
+    background: #95a6ff;
     border-radius: 20px;
   }
   &__btn-container {
@@ -159,9 +168,15 @@ export default class ProductPage extends Vue {
   }
   &__search-form {
     width: 50%;
+    @media  screen and (max-width: 512px) {
+      width: 70%;
+      margin-right: 10px;
+    }
+
   }
 }
 .category {
+  @include small-desctop;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -183,5 +198,17 @@ export default class ProductPage extends Vue {
 }
 .pagination {
   margin: 40px auto;
+}
+.header {
+  width: 100%;
+  height: 300px;
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.category-wrapper {
+  width: 100%;
 }
 </style>

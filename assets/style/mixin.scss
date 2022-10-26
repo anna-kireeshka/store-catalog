@@ -32,9 +32,18 @@
   border: none;
   outline: none;
   cursor: pointer;
-  background: #afdaff;
+  background: #95a6ff;
   border-radius: 33px;
   color: #072743;
+}
+
+@mixin small-desctop {
+  @media screen and (max-width: 1280px) {
+    width: 90%;
+  }
+  @media screen and (max-width: 767px) {
+    width: 95%;
+  }
 }
 
 @mixin media-table {

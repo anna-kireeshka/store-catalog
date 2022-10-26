@@ -59,7 +59,7 @@ export default class ProductModule extends VuexModule {
       const response = await axios.get(`${baseUrl}/products`)
       this.setProductList(response.data)
     } catch (err) {
-      console.log(err)
+      alert('Ошибка сервиса, каталог не загрузился')
     }
   };
 
@@ -69,7 +69,7 @@ export default class ProductModule extends VuexModule {
       const response = await axios.get(`${baseUrl}/products/${idProduct}`);
       this.setProductDatail(response.data)
     } catch (err) {
-      console.log(err)
+      alert('Ошибка сервиса, информация о продукте не загрузилась')
     }
   };
 
@@ -79,7 +79,7 @@ export default class ProductModule extends VuexModule {
       const response = await axios.get(`${baseUrl}/products/categories`);
       this.setCategoriesList(response.data);
     } catch (err) {
-      console.log(err)
+      alert('Ошибка сервиса, информация о категориях не загрузилась')
     }
   }
 
@@ -89,7 +89,7 @@ export default class ProductModule extends VuexModule {
       const response = await axios.get(`${baseUrl}/products/category/${category}`);
       this.setFilteredList(response.data)
     } catch (err) {
-      console.log(err)
+      alert('Ошибка сервиса, каталог не загрузился')
     }
   }
 };

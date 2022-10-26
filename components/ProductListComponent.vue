@@ -24,7 +24,6 @@
           <div :class="{ 'info-row': isList }">
             <div class="product__info info">
               <p class="info__title">{{ item.title }}</p>
-              <!--            <p class="info__description" :class="{'info-row__description': isList}"> {{ item.description }} </p>-->
             </div>
             <div class="prooduct__price price">
               <div class="price-wrap">
